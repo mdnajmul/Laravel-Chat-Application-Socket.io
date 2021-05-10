@@ -1,6 +1,32 @@
 .chat-row{
    margin: 50px; 
 }
+
 .chat-user-list{
     list-style: none;
+}
+
+.name-image{
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 5px;
+    padding-left: 8px;
+    display: inline-block;
+}
+
+.chat-name, .chat-image{
+    display: inline-block;
+}
+
+.chat-user-list{
+    margin-bottom: 10px;
+    padding: 5px;
+    height: 45px;
+}
+
+.chat-user-list.active{
+    background: #e4e4e4;
 }
