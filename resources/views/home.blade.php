@@ -28,7 +28,9 @@
             <h1>
                 Message Section
             </h1>
-            Select user from the list to begin conversation.
+            <p class="lead">
+                Select user from the list to begin conversation.
+            </p>
         </div>
     </div>
 @endsection
