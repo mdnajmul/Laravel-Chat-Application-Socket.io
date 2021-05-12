@@ -54,7 +54,7 @@
                 $userStatusIcon.removeClass('text-success');
                 $userStatusIcon.attr('title', 'away');
                 $.each(data, function (key, val) {
-                    if (val != null && val != 0) {
+                    if (val !== null && val !== 0) {
                         console.log(key);
                         let $userIcon = $('.user-icon-'+key);
                         $userIcon.addClass('text-success');

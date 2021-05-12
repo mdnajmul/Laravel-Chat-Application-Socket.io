@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Stmt\TryCatch;
+use App\Events\PrivateMessageEvent;
 
 class MessageController extends Controller
 {
@@ -46,6 +47,8 @@ class MessageController extends Controller
                 $data['content'] = $message->message;
                 $data['created_at'] = $message->created_at;
                 $data['message_id'] = $message->id;
+
+                event(new PrivateMessageEvent($data));
 
                 return response()->json([
                     'data' => $data,

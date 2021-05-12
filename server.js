@@ -6,11 +6,22 @@ var io = require('socket.io')(http, {
         methods: ['GET', 'PATCH', 'POST', 'PUT']
     }
 });
+var Redis = require('ioredis');
+var redis = new Redis();
 var users = [];
 
 http.listen(3000, function () {
     console.log('Listenig to port 3000');
 });
+
+redis.subscribe('private-channel', function (){
+    console.log('Subscribed to private channel');
+});
+
+redis.on('message', function (channel, message){
+    console.log(channel);
+    console.log(message);
+})
 
 io.on('connection', function (socket){
     socket.on("user_connected", function (user_id){
